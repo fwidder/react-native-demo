@@ -34,11 +34,11 @@ npm run start
 
 Open Expo Client on your device. Use it to scan the QR code printed by exp start. You may have to wait a minute while your project bundles and loads for the first time.
 
-- [Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www)
-- [iOS](https://itunes.apple.com/app/apple-store/id982107779)
+* [Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www)
+* [iOS](https://itunes.apple.com/app/apple-store/id982107779)
 
 ### Step 4 - Start Coding
 
-Open the ```app.js``` file and start editing it!
+Open the `App.js` file and start editing it!
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
