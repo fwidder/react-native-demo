@@ -7,19 +7,44 @@ import {
   TextInput,
   KeyboardAvoidingView,
   Alert,
-  TouchableHighlight
+  TouchableHighlight,
+  Button,
+  Keyboard
 } from 'react-native';
-import data from './demodata.json';
+import dataInit from './demodata.json';
+
+{
+  /* Constant for rendering ListView */
+}
+const ds = new ListView.DataSource({
+  rowHasChanged: (r1, r2) => r1 !== r2
+});
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    const ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2
-    });
+    this.sendMessage = this.sendMessage.bind(this);
     this.state = {
-      dataSource: ds.cloneWithRows(data)
+      data: dataInit,
+      dataSource: ds.cloneWithRows(dataInit),
+      inputText: ''
     };
+  }
+
+  sendMessage() {
+    const tmp = this.state.data;
+    tmp.push({
+      sender: 'ONE',
+      reciever: 'TWO',
+      message: this.state.inputText
+    });
+    this.setState({ data: tmp });
+    this.setState({
+      dataSource: ds.cloneWithRows(this.state.data)
+    });
+    this.setState({ inputText: '' });
+    this.listView.scrollToEnd();
+    Keyboard.dismiss();
   }
 
   render() {
@@ -30,9 +55,13 @@ export default class App extends React.Component {
         </View>
         <View style={styles.content}>
           <ListView
+            ref={listView => {
+              this.listView = listView;
+            }}
             dataSource={this.state.dataSource}
             renderRow={rowData => (
               <View>
+                <View style={styles.seperator} />
                 <TouchableHighlight
                   onPress={() => {
                     Alert.alert(rowData.sender, rowData.message);
@@ -47,7 +76,18 @@ export default class App extends React.Component {
           />
         </View>
         <View style={styles.footer}>
-          <TextInput style={styles.input} placeholder="Type here!" />
+          <TextInput
+            style={styles.input}
+            placeholder="Type here!"
+            onChangeText={inputText => this.setState({ inputText })}
+            value={this.state.inputText}
+          />
+          <Button
+            title="Send"
+            onPress={this.sendMessage}
+            accessibilityLabel="Send a message."
+            style={styles.sendButton}
+          />
         </View>
       </KeyboardAvoidingView>
     );
@@ -57,15 +97,20 @@ export default class App extends React.Component {
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');
 const styles = StyleSheet.create({
+  sendButton: {
+    flex: 2,
+    textAlign: 'center',
+    fontSize: 30
+  },
   seperator: {
-    height: 20
+    height: 10
   },
   row: {
     fontSize: 30
   },
   input: {
-    flex: 1,
-    fontSize: 30
+    flex: 5,
+    fontSize: 20
   },
   head: {
     textAlign: 'center',
@@ -90,6 +135,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 2,
-    backgroundColor: 'lightgrey'
+    backgroundColor: 'lightgrey',
+    flexDirection: 'row'
   }
 });
