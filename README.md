@@ -1,5 +1,9 @@
 # Simple UI-Demo with React Native
 
+Simple UI-Demo with with a basic functionality.
+
+For a preview go to https://expo.io/@fwidder/react-native-demo
+
 ## Getting started
 
 ### Step 1 - Download the code from Github
