@@ -1,67 +1,67 @@
 [
   {
     "sender": "ONE",
-    "reciever": "TWO",
+    "receiver": "TWO",
     "message": "MSG #1"
   },
   {
     "sender": "TWO",
-    "reciever": "ONE",
+    "receiver": "ONE",
     "message": "MSG #2"
   },
   {
     "sender": "ONE",
-    "reciever": "TWO",
+    "receiver": "TWO",
     "message": "MSG #3"
   },
   {
     "sender": "ONE",
-    "reciever": "TWO",
+    "receiver": "TWO",
     "message": "MSG #4"
   },
   {
     "sender": "TWO",
-    "reciever": "ONE",
+    "receiver": "ONE",
     "message": "MSG #5"
   },
   {
     "sender": "ONE",
-    "reciever": "TWO",
+    "receiver": "TWO",
     "message": "MSG #6"
   },
   {
     "sender": "TWO",
-    "reciever": "ONE",
+    "receiver": "ONE",
     "message": "MSG #7"
   },
   {
     "sender": "ONE",
-    "reciever": "TWO",
+    "receiver": "TWO",
     "message": "MSG #8"
   },
   {
     "sender": "ONE",
-    "reciever": "TWO",
+    "receiver": "TWO",
     "message": "MSG #9"
   },
   {
     "sender": "TWO",
-    "reciever": "ONE",
+    "receiver": "ONE",
     "message": "MSG #10"
   },
   {
     "sender": "ONE",
-    "reciever": "TWO",
+    "receiver": "TWO",
     "message": "MSG #11"
   },
   {
     "sender": "ONE",
-    "reciever": "TWO",
+    "receiver": "TWO",
     "message": "MSG #12"
   },
   {
     "sender": "TWO",
-    "reciever": "ONE",
+    "receiver": "ONE",
     "message": "MSG #13"
   }
 ]

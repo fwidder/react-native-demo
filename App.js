@@ -35,7 +35,7 @@ export default class App extends React.Component {
     const tmp = this.state.data;
     tmp.push({
       sender: 'ONE',
-      reciever: 'TWO',
+      receiver: 'TWO',
       message: this.state.inputText
     });
     this.setState({ data: tmp });
