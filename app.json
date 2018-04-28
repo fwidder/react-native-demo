@@ -1,4 +1,5 @@
 {
+  "privacy": "public",
   "expo": {
     "sdkVersion": "26.0.0"
   }
